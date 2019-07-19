@@ -13,6 +13,7 @@ struct Room {
 }
 ```
 --------------------------
+Answer below:
 
 ```swift
 
@@ -40,6 +41,8 @@ class Bike {
     var hasBell = false
 }
 ```
+--------------------------
+Answer below:
 ```swift
 class Bike {
 var wheelNumber = 2
@@ -64,6 +67,8 @@ class Animal {
     }
 }
 ```
+--------------------------
+Answer below:
 ```swift
 class Animal {
 var name: String = ""
@@ -126,7 +131,8 @@ class Bike {
   }
 }
 ```
-
+--------------------------
+Answer below:
 
 a. Create a `LoudBike` subclass of Bike.  When you call `ringBell` it should ring the bell in all caps.
 
