@@ -240,9 +240,12 @@ struct Point {
 let x: Double
 let y: Double
 func distance(to point: Point) -> Double {
+
 let horizontalDistance = self.x - point.x
 let verticalDistance = self.y - point.y
+
 let distanceBetweenTwoPoints = sqrt(horizontalDistance * horizontalDistance + verticalDistance * verticalDistance)
+
 return distanceBetweenTwoPoints
 }
 }
