@@ -11,6 +11,19 @@ struct Room {
      let length: Double
      let width: Double
 }
+```swift
+
+struct Room {
+var maxOccupancy: Int
+let length: Double
+let width: Double
+}
+
+var myRoom = Room(maxOccupancy: 2, length: 5, width: 10)
+var secondRoom = myRoom
+secondRoom.maxOccupancy = 3
+print(myRoom.maxOccupancy)
+print(secondRoom.maxOccupancy)
 ```
 
 ## Question 2
@@ -22,6 +35,17 @@ class Bike {
     var wheelNumber = 2
     var hasBell = false
 }
+```
+```swift
+class Bike {
+var wheelNumber = 2
+var hasBell = false
+}
+var myBike = Bike()
+var secondBike = myBike
+secondBike.wheelNumber = 3
+print(myBike.wheelNumber)
+print(secondBike.wheelNumber)
 ```
 
 ## Question 3
@@ -36,8 +60,52 @@ class Animal {
     }
 }
 ```
+```swift
+class Animal {
+var name: String = ""
+func printDescription() {
+print("I am an animal named \(name)")
+}
+init(name: String){
+self.name = name
+}
+
+
+}
+class Bird: Animal {
+var canFly: Bool
+init(name: String, canFly: Bool) {
+self.canFly = canFly
+super.init(name: name)
+}
+}
+var chicken = Bird(name: "Chicken", canFly: false)
+chicken.printDescription()
+
+```
 
 b. Override the printDescription method to have the instance of the Bird object print out its name and whether it can fly
+
+```swift
+class Bird: Animal {
+var canFly: Bool
+init(name: String, canFly: Bool) {
+self.canFly = canFly
+super.init(name: name)
+}
+override func printDescription() {
+if canFly == true {
+print("I am an animal named \(name) and I can fly")
+} else {
+print("I am an animal named \(name) and I cannot fly")
+
+
+}
+}
+}
+var chicken = Bird(name: "Chicken", canFly: false)
+chicken.printDescription()
+```
 
 
 ## Question 4
@@ -58,8 +126,32 @@ class Bike {
 
 a. Create a `LoudBike` subclass of Bike.  When you call `ringBell` it should ring the bell in all caps.
 
+```swift
+class LoudBike: Bike {
+override func ringBell() {
+print("RING!!"
+)
+}
+}
+
+var myBike = LoudBike()
+myBike.ringBell()
+```
+
 b. Give `LoudBike` a new method called `ringBell(times:)` that rings the bell a given number of times
 
+```swift
+class LoudBike: Bike {
+func ringBell(times: Int) {
+for _ in 1...times {
+print("RING!!!")
+}
+}
+}
+
+var myBike = LoudBike()
+myBike.ringBell(times: 3)
+```
 
 ## Question 5
 
