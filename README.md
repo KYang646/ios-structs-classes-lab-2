@@ -11,7 +11,11 @@ struct Room {
      let length: Double
      let width: Double
 }
+```
+--------------------------
+
 ```swift
+
 
 struct Room {
 var maxOccupancy: Int
@@ -165,7 +169,32 @@ class Shape {
 
 a. Given the `Shape` object above, create a subclass `Square` with a property `sideLength` with a default value of 5.
 
+```swift
+class Square: Shape {
+var sideLength = 5.0
+}
+```
+
 b. Override the `area` and `perimeter` computed values so the return the area/perimeter of the square as appropriate
+
+```swift
+class Square: Shape {
+var sideLength = 5.0
+override var area: Double {
+// attempted to use getter and setter to override computer variable but did not succeed :(
+get {
+return 1.0
+}
+set {
+self.area = sideLength * sideLength
+}
+}
+
+//    override var area = sideLength * sideLength
+
+
+}
+```
 
 c. Override the `name` property of `Square` so that it returns a String containing its name ("Square") and its area and perimeter
 
